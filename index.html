@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.3.0/typeit.min.js" ></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600|Ubuntu" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script src="./dist/malarkey.js"></script>
+    <script>
+    $( function() {
+      var elem = document.querySelector('.dragndrophint');
+      var opts = {
+        typeSpeed: 50,
+        deleteSpeed: 50,
+        pauseDelay: 1000,
+        loop: false,
+        postfix: ''
+      };
+      malarkey(elem, opts).type('Drag') .pause().delete()
+                          .type('Drop') .pause().delete()
+      $(".cube1").data({
+          'originalLeft': $(".cube1").css('left'),
+          'origionalTop': $(".cube1").css('top')
+      });
+      $(".cube2").data({
+          'originalLeft': $(".cube2").css('left'),
+          'origionalTop': $(".cube2").css('top')
+      });
+      $(".cube3").data({
+          'originalLeft': $(".cube3").css('left'),
+          'origionalTop': $(".cube3").css('top')
+      });
+      $(".card1").data({
+          'originalLeft': $(".card1").css('left'),
+          'origionalTop': $(".card1").css('top')
+      });
+      $(".card2").data({
+          'originalLeft': $(".card2").css('left'),
+          'origionalTop': $(".card2").css('top')
+      });
+      $(".card3").data({
+          'originalLeft': $(".card3").css('left'),
+          'origionalTop': $(".card3").css('top')
+      });
+      $(".card4").data({
+          'originalLeft': $(".card4").css('left'),
+          'origionalTop': $(".card4").css('top')
+      });
+      $(".card5").data({
+          'originalLeft': $(".card5").css('left'),
+          'origionalTop': $(".card5").css('top'),
+          'origionalRight': $(".card5").css('right')
+      });
+      $(".card6").data({
+          'originalLeft': $(".card6").css('left'),
+          'origionalTop': $(".card6").css('top'),
+          'origionalRight': $(".card5").css('right')
+      });
+      $(".card7").data({
+          'originalLeft': $(".card7").css('left'),
+          'origionalTop': $(".card7").css('top')
+      });
+      $(".cube1").draggable({
+          revert : function(event, ui) {
+              // on older version of jQuery use "draggable"
+              // $(this).data("draggable")
+              // on 2.x versions of jQuery use "ui-draggable"
+              // $(this).data("ui-draggable")
+              $(this).data("uiDraggable").originalPosition = {
+                  top : 0,
+                  left : 0
+              };
+              // return boolean
+              return !event;
+              // that evaluate like this:
+              // return event !== false ? false : true;
+          }
+      });
+      $(".cube2").draggable({
+          revert : function(event, ui) {
+              // on older version of jQuery use "draggable"
+              // $(this).data("draggable")
+              // on 2.x versions of jQuery use "ui-draggable"
+              // $(this).data("ui-draggable")
+              $(this).data("uiDraggable").originalPosition = {
+                  top : 0,
+                  left : 0
+              };
+              // return boolean
+              return !event;
+              // that evaluate like this:
+              // return event !== false ? false : true;
+          }
+      });
+      $(".cube3").draggable({
+          revert : function(event, ui) {
+              // on older version of jQuery use "draggable"
+              // $(this).data("draggable")
+              // on 2.x versions of jQuery use "ui-draggable"
+              // $(this).data("ui-draggable")
+              $(this).data("uiDraggable").originalPosition = {
+                  top : 0,
+                  left : 0
+              };
+              // return boolean
+              return !event;
+              // that evaluate like this:
+              // return event !== false ? false : true;
+          }
+      });
+      $( ".magnifier" ).droppable({
+        drop: function( event, ui ) {
+            if(ui.draggable.hasClass('cube1')) {
+              $(".cube2").css({
+                  'left': $(".cube2").data('originalLeft'),
+                  'top': $(".cube2").data('origionalTop')
+              });
+              $(".cube3").css({
+                  'left': $(".cube3").data('originalLeft'),
+                  'top': $(".cube3").data('origionalTop')
+              });
+              $(".card3").css({
+                  'left': $(".card3").data('originalLeft'),
+                  'top': $(".card3").data('origionalTop')
+              });
+              $(".card4").css({
+                  'left': $(".card4").data('originalLeft'),
+                  'top': $(".card4").data('origionalTop')
+              });
+              $(".card5").css({
+                  'left': $(".card5").data('originalLeft'),
+                  'top': $(".card5").data('origionalTop'),
+                  'right': $(".card5").data('origionalRight')
+              });
+              $(".card6").css({
+                  'left': $(".card6").data('originalLeft'),
+                  'top': $(".card6").data('origionalTop'),
+                  'right': $(".card5").data('origionalRight')
+              });
+              $(".card7").css({
+                  'left': $(".card7").data('originalLeft'),
+                  'top': $(".card7").data('origionalTop')
+              });
+              $(".card7").addClass('hidden')
+              $(".card3").addClass('hidden')
+              $(".card4").addClass('hidden')
+              $(".card5").addClass('hidden')
+              $(".card6").addClass('hidden')
+              $(".card1").removeClass('hidden')
+              $(".card2").removeClass('hidden')
+              $( ".card1" ).animate({left: "-=330"}, 500)
+              $( ".card2" ).animate({left: "+=250"}, 500)
+            } else if(ui.draggable.hasClass('cube2')) {
+              $(".cube1").css({
+                  'left': $(".cube1").data('originalLeft'),
+                  'top': $(".cube1").data('origionalTop')
+              });
+              $(".cube3").css({
+                  'left': $(".cube3").data('originalLeft'),
+                  'top': $(".cube3").data('origionalTop')
+              });
+              $(".card1").css({
+                  'left': $(".card1").data('originalLeft'),
+                  'top': $(".card1").data('origionalTop')
+              });
+              $(".card2").css({
+                  'left': $(".card2").data('originalLeft'),
+                  'top': $(".card2").data('origionalTop')
+              });
+              $(".card3").css({
+                  'left': $(".card3").data('originalLeft'),
+                  'top': $(".card3").data('origionalTop')
+              });
+              $(".card4").css({
+                  'left': $(".card4").data('originalLeft'),
+                  'top': $(".card4").data('origionalTop')
+              });
+              $(".card5").css({
+                  'left': $(".card5").data('originalLeft'),
+                  'top': $(".card5").data('origionalTop'),
+                  'right': $(".card5").data('origionalRight')
+              });
+              $(".card6").css({
+                  'left': $(".card6").data('originalLeft'),
+                  'top': $(".card6").data('origionalTop'),
+                  'right': $(".card5").data('origionalRight')
+              });
+              $(".card7").css({
+                  'left': $(".card7").data('originalLeft'),
+                  'top': $(".card7").data('origionalTop')
+              });
+              $(".card1").addClass('hidden')
+              $(".card2").addClass('hidden')
+              $(".card3").addClass('hidden')
+              $(".card4").addClass('hidden')
+              $(".card5").addClass('hidden')
+              $(".card6").addClass('hidden')
+              $(".card7").removeClass('hidden')
+              $(".card7").animate({top:"-=130"},500)
+            } else if(ui.draggable.hasClass('cube3')) {
+              $(".cube1").css({
+                  'left': $(".cube1").data('originalLeft'),
+                  'top': $(".cube1").data('origionalTop')
+              });
+              $(".cube2").css({
+                  'left': $(".cube2").data('originalLeft'),
+                  'top': $(".cube2").data('origionalTop')
+              });
+              $(".card1").css({
+                  'left': $(".card1").data('originalLeft'),
+                  'top': $(".card1").data('origionalTop')
+              });
+              $(".card2").css({
+                  'left': $(".card2").data('originalLeft'),
+                  'top': $(".card2").data('origionalTop')
+              });
+              $(".card7").css({
+                  'left': $(".card7").data('originalLeft'),
+                  'top': $(".card7").data('origionalTop')
+              });
+              $(".card1").addClass('hidden')
+              $(".card2").addClass('hidden')
+              $(".card7").addClass('hidden')
+              $(".card3").removeClass('hidden')
+              $(".card4").removeClass('hidden')
+              $(".card5").removeClass('hidden')
+              $(".card6").removeClass('hidden')
+              $( ".card3" ).animate({left: "-=250",top: "-=170"}, 500)
+              $( ".card4" ).animate({left: "+=250",top: "+=170"}, 500)
+              $( ".card5" ).animate({right: "-=250",top: "-=170"}, 500)
+              $( ".card6" ).animate({right: "+=250",top: "+=170"}, 500)
+            }
+        }
+      });
+    } );
+  </script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="dragndrophint">
+      </div>
+      <div class="cube1">
+        <img src="assets/experience.png">
+      </div>
+      <div class="cube2" id="specialPhoto">
+        <img src="assets/education.png">
+      </div>
+      <div class="cube3">
+        <img src="assets/projects.png">
+      </div>
+    </div>
+    <div class="magnifier">
+      <img src="assets/magnifier.png">
+    </div>
+      <div class="hidden card1 col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><img src="assets/jamii.png"></span>
+            <h3 style="color:#50fa7b;"> Backend Developer </h3>
+            <p style="color:#f8f8f2;">Followed the Domain Driven Design to build the backend structure from scratch</p>
+            <p style="color:#f8f8f2;">Technologies: AWS, NodeJS, Socket.io, Python, open sourced projects</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden card2 col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><img src="assets/interset.png"></span>
+            <h3 style="color:#50fa7b;"> Software Tester </h3>
+            <p style="color:#f8f8f2;">Built a tool for visualizing bugs and issues with D3.js. Also, Maintained and built automation frameworks through Jenkins</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden card3 col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><img src="assets/tradey.png"></span>
+            <h3 style="color:#50fa7b;"> Tradey </h3>
+            <p style="color:#f8f8f2;font-size:14px;margin-top:-10px;"> Created an iOS app for trading cheap, unused items with no money involved</p>
+            <p style="color:#f8f8f2;">Technologies: AWS, Swift, NodeJS</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden card4 col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><img src="assets/bot.png"></span>
+            <h3 style="color:#50fa7b;"> UW Chatbot </h3>
+            <p style="color:#f8f8f2;font-size:14px;margin-top:-10px;"> Built a facebook messenger chatbot for answering everyday student questions </p>
+            <p style="color:#f8f8f2;">Technologies: NodeJS, facebook SDK</p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden card5 col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <h3 style="color:#50fa7b;"> Spood </h3>
+            <p style="color:#f8f8f2;font-size:16px;margin-top:20px;"> Created a webapp integrated with an NLP API for updating products stock count </p>
+            <p style="color:#f8f8f2;">Technologies: AWS, NodeJS, Nuance API, React </p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden card6 col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><img src="assets/safescription.png"></span>
+            <h3 style="color:#50fa7b;"> Safescription </h3>
+            <p style="color:#f8f8f2;font-size:14px;margin-top:-10px;"> Built a webapp for minimizing perscription errors at WearHacks. Integrated Twilio to send reminders in text and voice. </p>
+            <p style="color:#f8f8f2;"> Technologies: Firebase, NodeJS, HTML/CSS/jQuery, Twilio </p>
+          </div>
+        </div>
+      </div>
+      <div class="hidden card7 col s12 m6">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <span class="card-title"><img src="assets/uw.png"></span>
+            <h3 style="color:#50fa7b;"> Computer Science-2020 </h3>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+          <div class="contact">
+            <a href="https://www.github.com/abdulmi">
+              <img src="assets/gitHub.png">
+            </a>
+          </div>
+          <div class="contact">
+            <a href="https://www.linkedin.com/in/abdulqader-almetwali/">
+              <img src="assets/linkedIn.png">
+            </a>
+          </div>
+      </div>
+  </body>
+</html>

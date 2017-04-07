@@ -1,0 +1,166 @@
+.magnifier {
+  position: absolute;
+  top: 46%;
+  left: 46%;
+}
+
+.dragndrophint {
+  position: absolute;
+  margin-left: 8%;
+  margin-top: 10%;
+  font-size: 80px;
+  font-family: 'Ubuntu',sans-serif;
+}
+
+html {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #44475a;
+}
+
+.header {
+  width: 50%;
+  height: 15%;
+  top: 0px;
+  margin-left: 35%;
+}
+
+.cube1 {
+  float: left;
+  margin: 2%;
+  padding-left: 5%;
+  border-radius: 4px;
+  background-color: #50fa7b;
+}
+
+.cube2 {
+  float: left;
+  margin: 2%;
+  padding-left: 5%;
+  border-radius: 4px;
+  background-color: #50fa7b;
+}
+
+.cube3 {
+  float: left;
+  margin: 2%;
+  padding-left: 5%;
+  border-radius: 4px;
+  background-color: #50fa7b;
+}
+
+.cube1 img {
+  width: 60%;
+  height: 60%;
+}
+
+.cube2 img {
+  width: 60%;
+  height: 60%;
+}
+
+.cube3 img {
+  width: 60%;
+  height: 60%;
+}
+
+#specialPhoto {
+  padding-left: 2%;
+}
+
+#specialPhoto img {
+  width: 80%;
+  height: 80%;
+}
+
+.col {
+  width: 30%;
+  height: 50%;
+  position: absolute;
+  margin-left: 39%;
+  margin-top: 10%;
+}
+
+.card7 .card {
+  width: 60%;
+  height: 60%;
+  text-align: center;
+}
+
+.card3 .card {
+  width: 80%;
+  height: 65%;
+  text-align: center;
+}
+
+.card3 h3 {
+  font-size: 20px;
+  margin-top: -20px;
+}
+
+.card4 .card {
+  width: 80%;
+  height: 65%;
+  text-align: center;
+}
+
+.card4 h3 {
+  font-size: 20px;
+  margin-top: -20px;
+}
+
+.card5 .card {
+  width: 80%;
+  height: 65%;
+  text-align: center;
+}
+
+.card5 h3 {
+  font-size: 20px;
+  margin-top: -20px;
+}
+
+.card6 .card {
+  width: 80%;
+  height: 65%;
+  text-align: center;
+}
+
+.card6 h3 {
+  font-size: 20px;
+  margin-top: -20px;
+}
+
+.card7 h3 {
+  font-size: 20px;
+  margin-top: -20px;
+}
+
+.card7 img {
+  padding-top: 0;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 30%;
+  margin-left: 48%;
+  margin-bottom: 1%;
+}
+
+.contact {
+  float:left;
+}
