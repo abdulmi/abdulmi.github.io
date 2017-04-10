@@ -155,8 +155,8 @@
               $(".card6").addClass('hidden')
               $(".card1").removeClass('hidden')
               $(".card2").removeClass('hidden')
-              $( ".card1" ).animate({left: "-=330"}, 500)
-              $( ".card2" ).animate({left: "+=250"}, 500)
+              $( ".card1" ).animate({left: "-=25%"}, 500)
+              $( ".card2" ).animate({left: "+=20%"}, 500)
             } else if(ui.draggable.hasClass('cube2')) {
               $(".cube1").css({
                   'left': $(".cube1").data('originalLeft'),
@@ -203,7 +203,7 @@
               $(".card5").addClass('hidden')
               $(".card6").addClass('hidden')
               $(".card7").removeClass('hidden')
-              $(".card7").animate({top:"-=130"},500)
+              $(".card7").animate({top:"-=20%"},500)
             } else if(ui.draggable.hasClass('cube3')) {
               $(".cube1").css({
                   'left': $(".cube1").data('originalLeft'),
@@ -232,10 +232,10 @@
               $(".card4").removeClass('hidden')
               $(".card5").removeClass('hidden')
               $(".card6").removeClass('hidden')
-              $( ".card3" ).animate({left: "-=250",top: "-=170"}, 500)
-              $( ".card4" ).animate({left: "+=250",top: "+=170"}, 500)
-              $( ".card5" ).animate({right: "-=250",top: "-=170"}, 500)
-              $( ".card6" ).animate({right: "+=250",top: "+=170"}, 500)
+              $( ".card3" ).animate({left: "-=20%",top: "-=20%"}, 500)
+              $( ".card4" ).animate({left: "+=20%",top: "+=20%"}, 500)
+              $( ".card5" ).animate({right: "-=20%",top: "-=20%"}, 500)
+              $( ".card6" ).animate({right: "+=20%",top: "+=20%"}, 500)
             }
         }
       });
@@ -244,8 +244,6 @@
   </head>
   <body>
     <div class="header">
-      <div class="dragndrophint">
-      </div>
       <div class="cube1">
         <img src="assets/experience.png">
       </div>
@@ -255,6 +253,8 @@
       <div class="cube3">
         <img src="assets/projects.png">
       </div>
+    </div>
+    <div class="dragndrophint">
     </div>
     <div class="magnifier">
       <img src="assets/magnifier.png">

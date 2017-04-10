@@ -1,13 +1,11 @@
 .magnifier {
   position: absolute;
   top: 46%;
-  left: 46%;
+  left: 44%;
 }
 
 .dragndrophint {
-  position: absolute;
-  margin-left: 8%;
-  margin-top: 10%;
+  margin-left: 40%;
   font-size: 80px;
   font-family: 'Ubuntu',sans-serif;
 }
@@ -85,14 +83,8 @@ body {
   width: 30%;
   height: 50%;
   position: absolute;
-  margin-left: 39%;
+  margin-left: 35%;
   margin-top: 10%;
-}
-
-.card7 .card {
-  width: 60%;
-  height: 60%;
-  text-align: center;
 }
 
 .card3 .card {
@@ -142,10 +134,12 @@ body {
 .card7 h3 {
   font-size: 20px;
   margin-top: -20px;
+  margin-left: 15%;
 }
 
 .card7 img {
   padding-top: 0;
+  margin-left: 20%;
 }
 
 
@@ -157,7 +151,7 @@ body {
   position: absolute;
   bottom: 0px;
   width: 30%;
-  margin-left: 48%;
+  margin-left: 46%;
   margin-bottom: 1%;
 }
 
