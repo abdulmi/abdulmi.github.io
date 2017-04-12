@@ -155,6 +155,32 @@ body {
   margin-bottom: 1%;
 }
 
+.linkedin-icon:hover {
+  cursor: pointer;
+}
+
+.linkedin-icon {
+  background-color: #FFFFFF;
+  fill: #007bb6;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius:3px;
+}
+
+.github-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.github-icon:hover {
+  cursor: pointer;
+}
+
 .contact {
   float:left;
+  margin-right:1%;
 }
+
+.pdfobject-container { height: 500px;}
+.pdfobject { border: 1px solid #666; }

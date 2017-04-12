@@ -13,8 +13,12 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
     <script src="./dist/malarkey.js"></script>
+    <script src="./dist/pdfobject.js"></script>
+    <script src="./dist/jquery.svgInject.js"></script>
+    <script>PDFObject.embed("assets/Abdulqader_1.pdf", "#pdfContainer");</script>
     <script>
     $( function() {
+      $(".linkedin-icon").svgInject()
       var elem = document.querySelector('.dragndrophint');
       var opts = {
         typeSpeed: 50,
@@ -325,15 +329,20 @@
           </div>
         </div>
       </div>
+      <div class="card8 col s12 m6">
+        <div class="card blue-grey darken-1" id="pdfContainer">
+
+        </div>
+      </div>
       <div class="footer">
           <div class="contact">
             <a href="https://www.github.com/abdulmi">
-              <img src="assets/gitHub.png">
+              <img class="github-icon" src="assets/github.svg">
             </a>
           </div>
           <div class="contact">
             <a href="https://www.linkedin.com/in/abdulqader-almetwali/">
-              <img src="assets/linkedIn.png">
+              <img src="assets/linkedin.svg" class="linkedin-icon">
             </a>
           </div>
       </div>
